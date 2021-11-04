@@ -3,7 +3,7 @@ import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import bg from '../../../../images/appointment-bg.png'
 import Button from '@mui/material/Button';
-import { Container, Typography } from '@mui/material';
+import { Container, Grid, Typography } from '@mui/material';
 
 
 const appointmentBanner = {
@@ -16,34 +16,40 @@ const appointmentBanner = {
 const AlwaysConnect = () => {
     return (
         <Box style={appointmentBanner} sx={{ flexGrow: 1 }}>
-            <Container>
-                <Typography variant="h6" sx={{ my: 5, py: 5 }} style={{ color: '#6ACECE' }}>
-                    CONTACT US
-                </Typography>
-                <from>
+            <Container
 
-                    <TextField sx={{ bgcolor: 'white', width: 800, my: 3, borderRadius: 1 }}
-                        placeholder="Email Address*"
+            >
+                <Grid
+                    sm={12}
+                    md={12}>
+                    <Typography variant="h6" sx={{ my: 5, py: 5 }} style={{ color: '#6ACECE' }}>
+                        CONTACT US
+                    </Typography>
+                    <from>
 
-                    />
+                        <TextField sx={{ bgcolor: 'white', width: ' 75%', my: 3, borderRadius: 1 }}
+                            placeholder="Email Address*"
 
-                    <br />
-                    <TextField sx={{ bgcolor: 'white', width: 800, my: 3, borderRadius: 1 }} id="outlined-basic"
-                        placeholder="Subject"
+                        />
 
-                    />
-                    <br />
+                        <br />
+                        <TextField sx={{ bgcolor: 'white', width: ' 75%', my: 3, borderRadius: 1 }} id="outlined-basic"
+                            placeholder="Subject"
 
-                    <TextField
-                        sx={{ bgcolor: 'white', width: 800, my: 3, borderRadius: 1 }}
-                        placeholder="Your Message*"
-                        multiline
-                        rows={4}
+                        />
+                        <br />
 
-                    />
-                    <br />
-                    <Button sx={{ width: 300, my: 3, borderRadius: 1 }} variant="contained">SUBMIT</Button>
-                </from>
+                        <TextField
+                            sx={{ bgcolor: 'white', width: ' 75%', my: 3, borderRadius: 1 }}
+                            placeholder="Your Message*"
+                            multiline
+                            rows={4}
+
+                        />
+                        <br />
+                        <Button sx={{ width: 300, my: 3, borderRadius: 1 }} variant="contained">SUBMIT</Button>
+                    </from>
+                </Grid>
 
             </Container>
 

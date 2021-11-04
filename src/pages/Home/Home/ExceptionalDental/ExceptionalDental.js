@@ -3,6 +3,7 @@ import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import treatment from '../../../../images/treatment.png'
 import { Button, Container, Typography } from '@mui/material';
+import { width } from '@mui/system';
 
 const ExceptionalDental = () => {
 
@@ -12,8 +13,14 @@ const ExceptionalDental = () => {
 
         <Container sx={{ flexGrow: 1, mt: 5 }}>
             <Grid container spacing={2}>
-                <Grid item xs={12} md={6}>
+                <Grid
+                    item
+                    xs={12}
+                    md={6}
+
+                >
                     <img
+
                         style={{
                             width: 400,
                         }}

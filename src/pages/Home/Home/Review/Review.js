@@ -6,8 +6,11 @@ import Typography from '@mui/material/Typography';
 import CardMedia from '@mui/material/CardMedia';
 
 
-const Service = (props) => {
-    const { name, description, img } = props.service;
+
+
+const Review = (props) => {
+    const { name, description, img } = props.bar;
+    console.log(props)
     return (
         <Grid
             item
@@ -45,14 +48,4 @@ const Service = (props) => {
     );
 };
 
-export default Service;
-
-// item
-// xs = { 12}
-// sm = { 6}
-// md = { 4}
-// sx = {{
-//     alignSelf: "center",
-
-//         p: 1,
-// }}
+export default Review;
