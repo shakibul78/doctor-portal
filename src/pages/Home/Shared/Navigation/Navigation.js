@@ -1,15 +1,21 @@
 import React from 'react';
 import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
+
 import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
+// import Typography from '@mui/material/Typography';
+// import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
+import useAuth from '../../../../hooks/useAuth.js';
+import { Button, Typography, Box } from '@mui/material';
+
 
 
 const Navigation = () => {
+
+    const { user, logout } = useAuth();
+
     return (
 
         <Box sx={{ flexGrow: 1 }}>
@@ -28,7 +34,19 @@ const Navigation = () => {
                         Doctors Portal
                     </Typography>
                     <Link to="/appointment"><Button color="inherit">Appointment</Button></Link>
-                    <Button color="inherit">Login</Button>
+                    {
+                        user?.email ?
+                            <Box>
+                                <NavLink style={{ textDecoration: 'none', color: 'white' }} to="dashboard">
+                                    <Button color="inherit">Dashboard</Button>
+                                </NavLink>
+                                <Button onClick={logout} color="inherit">Logout</Button>
+                            </Box>
+                            :
+                            <NavLink style={{ textDecoration: 'none', color: 'white' }} to="login">
+                                <Button color="inherit">Login</Button>
+                            </NavLink>
+                    }
                 </Toolbar>
             </AppBar>
         </Box>
